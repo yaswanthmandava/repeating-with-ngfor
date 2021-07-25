@@ -6,7 +6,11 @@ import { Component, Input } from '@angular/core';
     <ul>
       <li *ngFor="let photo of photos">
         <p>{{ photo.title }}</p>
-        <img [src]="photo.thumbnailUrl" [alt]="photo.title" />
+        <img
+          *ngIf="photo.thumbnailUrl"
+          [src]="photo.thumbnailUrl"
+          [alt]="photo.title"
+        />
       </li>
     </ul>
   `,
